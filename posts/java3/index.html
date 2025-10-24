@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  ArrayList trong java · Blog của Hưng
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Phạm Đông Hưng">
+<meta name="description" content="ArrayList là một lớp thuộc Collections Framework của Java, triển khai (implement) List Interface và kế thừa AbstractList. Nó hoạt động như một mảng động (dynamic array), có khả năng thay đổi kích thước linh hoạt để lưu trữ các phần tử.
+
+  I. Đặc Điểm Cốt Lõi của ArrayList
+  
+    
+    Link to heading
+  
+
+Hiểu rõ những đặc điểm này sẽ giúp bạn quyết định khi nào nên sử dụng ArrayList thay vì các cấu trúc dữ liệu khác:">
+<meta name="keywords" content="lap trinh mang, java, javascript, blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ArrayList trong java">
+  <meta name="twitter:description" content="ArrayList là một lớp thuộc Collections Framework của Java, triển khai (implement) List Interface và kế thừa AbstractList. Nó hoạt động như một mảng động (dynamic array), có khả năng thay đổi kích thước linh hoạt để lưu trữ các phần tử.
+I. Đặc Điểm Cốt Lõi của ArrayListLink to headingHiểu rõ những đặc điểm này sẽ giúp bạn quyết định khi nào nên sử dụng ArrayList thay vì các cấu trúc dữ liệu khác:">
+
+<meta property="og:url" content="http://localhost:1313/posts/java3/">
+  <meta property="og:site_name" content="Blog của Hưng">
+  <meta property="og:title" content="ArrayList trong java">
+  <meta property="og:description" content="ArrayList là một lớp thuộc Collections Framework của Java, triển khai (implement) List Interface và kế thừa AbstractList. Nó hoạt động như một mảng động (dynamic array), có khả năng thay đổi kích thước linh hoạt để lưu trữ các phần tử.
+I. Đặc Điểm Cốt Lõi của ArrayListLink to headingHiểu rõ những đặc điểm này sẽ giúp bạn quyết định khi nào nên sử dụng ArrayList thay vì các cấu trúc dữ liệu khác:">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:tag" content="Chuyên Môn IT">
+    <meta property="article:tag" content="Tài Liệu Java">
+    <meta property="article:tag" content="Java">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/java3/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Blog của Hưng
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/java3/">
+              ArrayList trong java
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-10-23T00:00:00Z">
+                23/10/2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/ph%E1%BA%A1m-%C4%91%C3%B4ng-h%C6%B0ng/">Phạm Đông Hưng</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/c%C3%BA-ph%C3%A1p/">Cú Pháp</a>
+      <span class="separator">•</span>
+    <a href="/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/">Trình Diễn Chủ Đề</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/chuy%C3%AAn-m%C3%B4n-it/">Chuyên Môn IT</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/t%C3%A0i-li%E1%BB%87u-java/">Tài Liệu Java</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/java/">Java</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>ArrayList là một lớp thuộc <strong>Collections Framework</strong> của Java, triển khai (<strong>implement</strong>) <strong>List Interface</strong> và kế thừa <strong>AbstractList</strong>. Nó hoạt động như một <strong>mảng động (dynamic array)</strong>, có khả năng thay đổi kích thước linh hoạt để lưu trữ các phần tử.</p>
+<h2 id="i-đặc-điểm-cốt-lõi-của-arraylist">
+  I. Đặc Điểm Cốt Lõi của ArrayList
+  <a class="heading-link" href="#i-%c4%91%e1%ba%b7c-%c4%91i%e1%bb%83m-c%e1%bb%91t-l%c3%b5i-c%e1%bb%a7a-arraylist">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Hiểu rõ những đặc điểm này sẽ giúp bạn quyết định khi nào nên sử dụng ArrayList thay vì các cấu trúc dữ liệu khác:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Đặc Điểm</th>
+          <th style="text-align: left">Giải Thích</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Kế thừa &amp; Triển khai</strong></td>
+          <td style="text-align: left">Kế thừa <code>AbstractList</code> và triển khai các Interface <code>List</code>, <code>RandomAccess</code>, <code>Cloneable</code>, <code>Serializable</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Đồng bộ</strong></td>
+          <td style="text-align: left"><strong>Không đồng bộ (non-synchronized)</strong>. Cần sử dụng các cơ chế đồng bộ hóa bên ngoài nếu làm việc trong môi trường đa luồng (multi-threading).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Truy cập</strong></td>
+          <td style="text-align: left">Cho phép <strong>truy cập ngẫu nhiên (random access)</strong> thông qua chỉ mục (index) với hiệu suất <strong>$\mathcal{O}(1)$</strong>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Hiệu suất (Thao tác)</strong></td>
+          <td style="text-align: left"><strong>Truy xuất phần tử nhanh (<code>get</code>)</strong>. Thao tác <strong>chèn/xóa ở giữa chậm</strong>.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="ii-khai-báo-và-khởi-tạo-arraylist">
+  II. Khai Báo và Khởi Tạo ArrayList
+  <a class="heading-link" href="#ii-khai-b%c3%a1o-v%c3%a0-kh%e1%bb%9fi-t%e1%ba%a1o-arraylist">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="1-cấu-trúc-hierarchy">
+  1. Cấu trúc Hierarchy
+  <a class="heading-link" href="#1-c%e1%ba%a5u-tr%c3%bac-hierarchy">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractList</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="kd">implements</span><span class="w"> </span><span class="n">List</span><span class="o">&lt;</span><span class="n">E</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="n">RandomAccess</span><span class="p">,</span><span class="w"> </span><span class="n">Cloneable</span><span class="p">,</span><span class="w"> </span><span class="n">java</span><span class="p">.</span><span class="na">io</span><span class="p">.</span><span class="na">Serializable</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="2-constructor-phổ-biến">
+  2. Constructor Phổ Biến
+  <a class="heading-link" href="#2-constructor-ph%e1%bb%95-bi%e1%ba%bfn">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Constructor</th>
+          <th style="text-align: left">Mục Đích</th>
+          <th style="text-align: left">Ví Dụ</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong><code>ArrayList()</code></strong></td>
+          <td style="text-align: left">Khởi tạo danh sách rỗng (dung lượng mặc định).</td>
+          <td style="text-align: left"><code>ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong><code>ArrayList(int capacity)</code></strong></td>
+          <td style="text-align: left">Khởi tạo với dung lượng ban đầu.</td>
+          <td style="text-align: left"><code>ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;(20);</code></td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="iii-các-phương-thức-quan-trọng-và-ví-dụ-sử-dụng">
+  III. Các Phương Thức Quan Trọng và Ví Dụ Sử Dụng
+  <a class="heading-link" href="#iii-c%c3%a1c-ph%c6%b0%c6%a1ng-th%e1%bb%a9c-quan-tr%e1%bb%8dng-v%c3%a0-v%c3%ad-d%e1%bb%a5-s%e1%bb%ad-d%e1%bb%a5ng">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="1-thêm-và-chèn-phần-tử">
+  1. Thêm và Chèn Phần tử
+  <a class="heading-link" href="#1-th%c3%aam-v%c3%a0-ch%c3%a8n-ph%e1%ba%a7n-t%e1%bb%ad">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Phương Thức</th>
+          <th style="text-align: left">Mô Tả</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>boolean add(E e)</code></td>
+          <td style="text-align: left">Nối phần tử <code>e</code> vào cuối danh sách.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>void add(int index, E element)</code></td>
+          <td style="text-align: left">Chèn <code>element</code> tại vị trí <code>index</code> đã chỉ định.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="2-truy-cập-và-cập-nhật">
+  2. Truy Cập và Cập Nhật
+  <a class="heading-link" href="#2-truy-c%e1%ba%adp-v%c3%a0-c%e1%ba%adp-nh%e1%ba%adt">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Phương Thức</th>
+          <th style="text-align: left">Mô Tả</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong><code>E get(int index)</code></strong></td>
+          <td style="text-align: left">Truy xuất phần tử tại vị trí <code>index</code> ($\mathcal{O}(1)$).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>E set(int index, E element)</code></td>
+          <td style="text-align: left">Cập nhật phần tử tại vị trí <code>index</code> bằng <code>element</code> mới.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="3-ví-dụ-sử-dụng-kết-hợp">
+  3. Ví dụ Sử dụng (Kết hợp)
+  <a class="heading-link" href="#3-v%c3%ad-d%e1%bb%a5-s%e1%bb%ad-d%e1%bb%a5ng-k%e1%ba%bft-h%e1%bb%a3p">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">String</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tenSinhVien</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ArrayList</span><span class="o">&lt;&gt;</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Thêm phần tử</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">tenSinhVien</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="s">&#34;Nguyen Van A&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">tenSinhVien</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">0</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;Tran Thi C&#34;</span><span class="p">);</span><span class="w"> </span><span class="c1">// Chèn vào vị trí 0</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Truy xuất</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">nguoiDauTien</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tenSinhVien</span><span class="p">.</span><span class="na">get</span><span class="p">(</span><span class="n">0</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">// Xóa phần tử</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">tenSinhVien</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">1</span><span class="p">);</span><span class="w"> </span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="iv-so-sánh-ngắn-arraylist-vs-linkedlist">
+  IV. So Sánh Ngắn: ArrayList vs. LinkedList
+  <a class="heading-link" href="#iv-so-s%c3%a1nh-ng%e1%ba%afn-arraylist-vs-linkedlist">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Tiêu chí</th>
+          <th style="text-align: left">ArrayList (Mảng động)</th>
+          <th style="text-align: left">LinkedList (Danh sách liên kết đôi)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Truy cập (Get)</strong></td>
+          <td style="text-align: left"><strong>Nhanh (Fast)</strong> - $\mathcal{O}(1)$</td>
+          <td style="text-align: left"><strong>Chậm (Slow)</strong> - $\mathcal{O}(n)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Chèn/Xóa</strong></td>
+          <td style="text-align: left"><strong>Chậm (Slow)</strong> - $\mathcal{O}(n)$</td>
+          <td style="text-align: left"><strong>Nhanh (Fast)</strong> - $\mathcal{O}(1)$</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Sử dụng khi</strong></td>
+          <td style="text-align: left">Cần truy xuất thường xuyên.</td>
+          <td style="text-align: left">Cần chèn/xóa thường xuyên.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Phạm Đông Hưng 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

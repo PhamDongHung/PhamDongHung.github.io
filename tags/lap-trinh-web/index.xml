@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lap Trinh Web on Blog của Hưng</title>
+    <link>http://localhost:1313/tags/lap-trinh-web/</link>
+    <description>Recent content in Lap Trinh Web on Blog của Hưng</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/lap-trinh-web/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>17 Ý Tưởng Dự Án JavaScript Thực Tế Cho Người Mới Bắt Đầu (Sắp Xếp Theo Độ Khó)</title>
+      <link>http://localhost:1313/posts/java6/</link>
+      <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/java6/</guid>
+      <description>&lt;p&gt;Thực hành là &lt;strong&gt;chìa khóa&lt;/strong&gt; để làm chủ JavaScript. Thay vì chỉ học lý thuyết, việc bắt tay vào làm các dự án thực tế sẽ giúp bạn hiểu sâu hơn về cách &lt;strong&gt;DOM&lt;/strong&gt; (Document Object Model) hoạt động, cách xử lý sự kiện (&lt;strong&gt;Event Handling&lt;/strong&gt;) và logic lập trình cơ bản.&lt;/p&gt;&#xA;&lt;p&gt;Dưới đây là danh sách các dự án JavaScript đơn giản, được phân chia theo từng cấp độ, giúp bạn từng bước nâng cao kỹ năng.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

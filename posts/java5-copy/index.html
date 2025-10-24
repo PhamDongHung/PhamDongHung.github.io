@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  17 Ý Tưởng Dự Án JavaScript Thực Tế Cho Người Mới Bắt Đầu (Sắp Xếp Theo Độ Khó) · Blog của Hưng
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Phạm Đông Hưng">
+<meta name="description" content="Thực hành là chìa khóa để làm chủ JavaScript. Thay vì chỉ học lý thuyết, việc bắt tay vào làm các dự án thực tế sẽ giúp bạn hiểu sâu hơn về cách DOM (Document Object Model) hoạt động, cách xử lý sự kiện (Event Handling) và logic lập trình cơ bản.
+Dưới đây là danh sách các dự án JavaScript đơn giản, được phân chia theo từng cấp độ, giúp bạn từng bước nâng cao kỹ năng.">
+<meta name="keywords" content="lap trinh mang, java, javascript, blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="17 Ý Tưởng Dự Án JavaScript Thực Tế Cho Người Mới Bắt Đầu (Sắp Xếp Theo Độ Khó)">
+  <meta name="twitter:description" content="Thực hành là chìa khóa để làm chủ JavaScript. Thay vì chỉ học lý thuyết, việc bắt tay vào làm các dự án thực tế sẽ giúp bạn hiểu sâu hơn về cách DOM (Document Object Model) hoạt động, cách xử lý sự kiện (Event Handling) và logic lập trình cơ bản.
+Dưới đây là danh sách các dự án JavaScript đơn giản, được phân chia theo từng cấp độ, giúp bạn từng bước nâng cao kỹ năng.">
+
+<meta property="og:url" content="http://localhost:1313/posts/java5-copy/">
+  <meta property="og:site_name" content="Blog của Hưng">
+  <meta property="og:title" content="17 Ý Tưởng Dự Án JavaScript Thực Tế Cho Người Mới Bắt Đầu (Sắp Xếp Theo Độ Khó)">
+  <meta property="og:description" content="Thực hành là chìa khóa để làm chủ JavaScript. Thay vì chỉ học lý thuyết, việc bắt tay vào làm các dự án thực tế sẽ giúp bạn hiểu sâu hơn về cách DOM (Document Object Model) hoạt động, cách xử lý sự kiện (Event Handling) và logic lập trình cơ bản.
+Dưới đây là danh sách các dự án JavaScript đơn giản, được phân chia theo từng cấp độ, giúp bạn từng bước nâng cao kỹ năng.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:tag" content="JavaScript">
+    <meta property="article:tag" content="Lap Trinh Web">
+    <meta property="article:tag" content="Html">
+    <meta property="article:tag" content="Lap Trinh Mang">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/java5-copy/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Blog của Hưng
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/projects/">Projects</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/java5-copy/">
+              17 Ý Tưởng Dự Án JavaScript Thực Tế Cho Người Mới Bắt Đầu (Sắp Xếp Theo Độ Khó)
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-10-23T00:00:00Z">
+                23/10/2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/ph%E1%BA%A1m-%C4%91%C3%B4ng-h%C6%B0ng/">Phạm Đông Hưng</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/lap-trinh-web/">Lap Trinh Web</a>
+      <span class="separator">•</span>
+    <a href="/categories/thuc-hanh/">Thuc Hanh</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/javascript/">JavaScript</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/lap-trinh-web/">Lap Trinh Web</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/html/">Html</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/lap-trinh-mang/">Lap Trinh Mang</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Thực hành là <strong>chìa khóa</strong> để làm chủ JavaScript. Thay vì chỉ học lý thuyết, việc bắt tay vào làm các dự án thực tế sẽ giúp bạn hiểu sâu hơn về cách <strong>DOM</strong> (Document Object Model) hoạt động, cách xử lý sự kiện (<strong>Event Handling</strong>) và logic lập trình cơ bản.</p>
+<p>Dưới đây là danh sách các dự án JavaScript đơn giản, được phân chia theo từng cấp độ, giúp bạn từng bước nâng cao kỹ năng.</p>
+<h2 id="cấp-độ-cơ-bản-level-1-nắm-vững-dom-và-event-handling">
+  Cấp Độ Cơ Bản (Level 1: Nắm vững DOM và Event Handling)
+  <a class="heading-link" href="#c%e1%ba%a5p-%c4%91%e1%bb%99-c%c6%a1-b%e1%ba%a3n-level-1-n%e1%ba%afm-v%e1%bb%afng-dom-v%c3%a0-event-handling">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Các dự án này tập trung vào việc thao tác với các phần tử HTML và CSS bằng JavaScript, xử lý các sự kiện đơn giản từ người dùng (<code>click</code>, nhập liệu).</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">#</th>
+          <th style="text-align: left">Tên Dự Án</th>
+          <th style="text-align: left">Mục tiêu Học tập Chính</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>1</strong></td>
+          <td style="text-align: left"><strong>Đồng Hồ Kỹ Thuật Số (Digital Clock)</strong></td>
+          <td style="text-align: left">Thao tác với đối tượng <strong><code>Date</code></strong>, sử dụng hàm <strong><code>setInterval()</code></strong> để cập nhật hiển thị theo thời gian thực.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>2</strong></td>
+          <td style="text-align: left"><strong>Máy Tính Đơn Giản (Basic Calculator)</strong></td>
+          <td style="text-align: left">Lắng nghe sự kiện <code>click</code> trên các nút, xử lý chuỗi và thực hiện các phép toán cơ bản.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>3</strong></td>
+          <td style="text-align: left"><strong>Kiểm Tra Palindrome</strong></td>
+          <td style="text-align: left">Thực hành thao tác với chuỗi (<strong>String manipulation</strong>): đảo ngược chuỗi, so sánh, và xử lý đầu vào của người dùng.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>4</strong></td>
+          <td style="text-align: left"><strong>Tính Tiền Bo (Tip Calculator)</strong></td>
+          <td style="text-align: left">Lấy dữ liệu nhập (số tiền, phần trăm bo), tính toán và hiển thị kết quả. Tập trung vào <strong>chuyển đổi kiểu dữ liệu</strong> và định dạng số.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>5</strong></td>
+          <td style="text-align: left"><strong>Bộ Đếm (Counter App)</strong></td>
+          <td style="text-align: left">Tạo các nút Tăng/Giảm/Đặt lại. Đây là bài tập kinh điển về việc <strong>cập nhật trạng thái số</strong> và hiển thị lên giao diện.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="cấp-độ-trung-bình-level-2-ứng-dụng-logic-và-lưu-trữ-dữ-liệu">
+  Cấp Độ Trung Bình (Level 2: Ứng dụng Logic và Lưu trữ Dữ liệu)
+  <a class="heading-link" href="#c%e1%ba%a5p-%c4%91%e1%bb%99-trung-b%c3%acnh-level-2-%e1%bb%a9ng-d%e1%bb%a5ng-logic-v%c3%a0-l%c6%b0u-tr%e1%bb%af-d%e1%bb%af-li%e1%bb%87u">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Các dự án này yêu cầu áp dụng logic điều kiện, vòng lặp phức tạp hơn và có thể liên quan đến việc lưu trữ dữ liệu cục bộ hoặc tạo hiệu ứng hình ảnh.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">#</th>
+          <th style="text-align: left">Tên Dự Án</th>
+          <th style="text-align: left">Mục tiêu Học tập Chính</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>6</strong></td>
+          <td style="text-align: left"><strong>Danh Sách Việc Cần Làm (To-Do List)</strong></td>
+          <td style="text-align: left">Dự án quan trọng nhất: Thêm, Xóa, Đánh dấu hoàn thành. Học cách sử dụng <strong><code>localStorage</code></strong> để lưu trữ dữ liệu cục bộ, đảm bảo danh sách không bị mất khi làm mới trình duyệt.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>7</strong></td>
+          <td style="text-align: left"><strong>Đồng Hồ Bấm Giờ/Đếm Ngược (Stopwatch/Timer)</strong></td>
+          <td style="text-align: left">Kết hợp <strong><code>setInterval()</code></strong> và logic điều khiển thời gian (Start, Stop, Reset). Thực hành chuyển đổi giây thành định dạng giờ/phút/giây.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>8</strong></td>
+          <td style="text-align: left"><strong>Bộ Trống (Drum Kit)</strong></td>
+          <td style="text-align: left">Xử lý <strong>sự kiện nhấn phím (Keyboard Events)</strong>, gán âm thanh tương ứng và thao tác với các thuộc tính <strong>Audio API</strong> cơ bản.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>9</strong></td>
+          <td style="text-align: left"><strong>Game Đoán Số (Guessing Game)</strong></td>
+          <td style="text-align: left">Tạo số ngẫu nhiên (<strong><code>Math.random()</code></strong>), sử dụng vòng lặp và logic điều kiện để đưa ra gợi ý cho người chơi.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>10</strong></td>
+          <td style="text-align: left"><strong>Trình Chiếu Ảnh Đơn Giản (Image Carousel/Slider)</strong></td>
+          <td style="text-align: left">Xử lý các nút điều hướng (Next/Prev) và sử dụng <strong><code>setTimeout</code>/<code>setInterval</code></strong> để tạo hiệu ứng chuyển động tự động, thao tác với thuộc tính <code>src</code> của ảnh.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="cấp-độ-nâng-cao-level-3-game-và-tương-tác-api">
+  Cấp Độ Nâng Cao (Level 3: Game và Tương tác API)
+  <a class="heading-link" href="#c%e1%ba%a5p-%c4%91%e1%bb%99-n%c3%a2ng-cao-level-3-game-v%c3%a0-t%c6%b0%c6%a1ng-t%c3%a1c-api">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Các dự án này bắt đầu chạm đến các kiến thức nâng cao hơn như làm việc với mảng/đối tượng phức tạp, thuật toán đơn giản, hoặc gửi yêu cầu HTTP.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">#</th>
+          <th style="text-align: left">Tên Dự Án</th>
+          <th style="text-align: left">Mục tiêu Học tập Chính</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center"><strong>11</strong></td>
+          <td style="text-align: left"><strong>Ứng Dụng Xem Thời Tiết (Weather App)</strong></td>
+          <td style="text-align: left">Học cách sử dụng <strong><code>fetch()</code> API</strong> hoặc <code>XMLHttpRequest</code> để gọi tới API của bên thứ ba (Ví dụ: OpenWeatherMap), xử lý dữ liệu <strong>JSON</strong> trả về và hiển thị lên giao diện.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>12</strong></td>
+          <td style="text-align: left"><strong>Game Đoán Màu (RGB Color Game)</strong></td>
+          <td style="text-align: left">Yêu cầu logic xử lý <strong>mảng (Array)</strong> và tạo màu ngẫu nhiên. Người chơi phải chọn đúng ô màu dựa trên giá trị mã màu RGB được cung cấp.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>13</strong></td>
+          <td style="text-align: left"><strong>Game Lật Bài (Memory Card Game)</strong></td>
+          <td style="text-align: left">Thuật toán <strong>xáo trộn mảng (Shuffling Array)</strong>, lưu trữ cặp thẻ, xử lý logic lật hai thẻ và so sánh chúng. Đây là bài tập tốt về quản lý trạng thái trò chơi.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>14</strong></td>
+          <td style="text-align: left"><strong>Cờ Caro (Tic-Tac-Toe)</strong></td>
+          <td style="text-align: left">Xây dựng lưới, luân phiên lượt chơi (X/O) và, quan trọng nhất, lập trình <strong>thuật toán kiểm tra điều kiện thắng</strong> (kiểm tra hàng ngang, dọc, chéo).</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>15</strong></td>
+          <td style="text-align: left"><strong>Bộ lọc Ảnh Đơn Giản (Image Filter)</strong></td>
+          <td style="text-align: left">Sử dụng các thanh trượt (<strong>Range Input</strong>) để thay đổi các thuộc tính CSS như <code>filter: blur()</code>, <code>brightness()</code>. Học cách <strong>liên kết JS với CSS</strong> để tạo hiệu ứng động.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>16</strong></td>
+          <td style="text-align: left"><strong>Trình Xác Thực Form (Form Validator)</strong></td>
+          <td style="text-align: left">Xử lý sự kiện submit, kiểm tra tính hợp lệ của dữ liệu (email, mật khẩu, độ dài tối thiểu) bằng <strong>Regex</strong> (Biểu thức chính quy) và hiển thị thông báo lỗi chi tiết.</td>
+      </tr>
+      <tr>
+          <td style="text-align: center"><strong>17</strong></td>
+          <td style="text-align: left"><strong>Bộ Lọc Danh Sách (Filtering/Searching List)</strong></td>
+          <td style="text-align: left">Hiển thị một danh sách lớn. Sử dụng sự kiện <code>input</code> để lọc hoặc tìm kiếm các mục trong danh sách theo <strong>thời gian thực (real-time filtering)</strong>.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="lời-khuyên-quan-trọng-khi-thực-hành">
+  Lời Khuyên Quan Trọng Khi Thực Hành
+  <a class="heading-link" href="#l%e1%bb%9di-khuy%c3%aan-quan-tr%e1%bb%8dng-khi-th%e1%bb%b1c-h%c3%a0nh">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li><strong>Bắt Đầu Từ HTML/CSS:</strong> Luôn tạo giao diện tĩnh (HTML/CSS) trước khi thêm bất kỳ dòng code JavaScript nào.</li>
+<li><strong>&ldquo;Tự Thử Trước, Tham Khảo Sau&rdquo;:</strong> Chỉ xem code mẫu nếu bạn đã cố gắng hết sức và bị mắc kẹt. Học cách <strong>tự debug (gỡ lỗi)</strong> là kỹ năng cốt lõi.</li>
+<li><strong>Mở Rộng Dự Án:</strong> Sau khi hoàn thành phiên bản cơ bản, hãy nghĩ cách thêm các tính năng nâng cao (ví dụ: thêm chế độ khó, thêm hiệu ứng CSS động, lưu trữ cài đặt người dùng).</li>
+</ul>
+<hr>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Phạm Đông Hưng 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

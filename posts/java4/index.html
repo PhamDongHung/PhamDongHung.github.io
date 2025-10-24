@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Spring security: Khám phá framework bảo mật hàng đầu cho ứng dụng Java · Blog của Hưng
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Phạm Đông Hưng">
+<meta name="description" content="Bảo mật là ưu tiên hàng đầu trong phát triển ứng dụng web, và Spring Security chính là giải pháp tiêu chuẩn, mạnh mẽ và linh hoạt nhất cho các ứng dụng Java được xây dựng trên Spring Framework. Bài viết này sẽ giúp bạn nắm vững kiến trúc, các khái niệm cơ bản (Xác thực và Phân quyền) và các bước thực hành để xây dựng một ứng dụng an toàn.">
+<meta name="keywords" content="lap trinh mang, java, javascript, blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Spring security: Khám phá framework bảo mật hàng đầu cho ứng dụng Java">
+  <meta name="twitter:description" content="Bảo mật là ưu tiên hàng đầu trong phát triển ứng dụng web, và Spring Security chính là giải pháp tiêu chuẩn, mạnh mẽ và linh hoạt nhất cho các ứng dụng Java được xây dựng trên Spring Framework. Bài viết này sẽ giúp bạn nắm vững kiến trúc, các khái niệm cơ bản (Xác thực và Phân quyền) và các bước thực hành để xây dựng một ứng dụng an toàn.">
+
+<meta property="og:url" content="http://localhost:1313/posts/java4/">
+  <meta property="og:site_name" content="Blog của Hưng">
+  <meta property="og:title" content="Spring security: Khám phá framework bảo mật hàng đầu cho ứng dụng Java">
+  <meta property="og:description" content="Bảo mật là ưu tiên hàng đầu trong phát triển ứng dụng web, và Spring Security chính là giải pháp tiêu chuẩn, mạnh mẽ và linh hoạt nhất cho các ứng dụng Java được xây dựng trên Spring Framework. Bài viết này sẽ giúp bạn nắm vững kiến trúc, các khái niệm cơ bản (Xác thực và Phân quyền) và các bước thực hành để xây dựng một ứng dụng an toàn.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Spring">
+    <meta property="article:tag" content="Lap Trinh Mang">
+    <meta property="article:tag" content="Bao Mat">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/java4/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Blog của Hưng
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/java4/">
+              Spring security: Khám phá framework bảo mật hàng đầu cho ứng dụng Java
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-10-23T00:00:00Z">
+                23/10/2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/ph%E1%BA%A1m-%C4%91%C3%B4ng-h%C6%B0ng/">Phạm Đông Hưng</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/bao-mat-ung-dung/">Bao Mat Ung Dung</a>
+      <span class="separator">•</span>
+    <a href="/categories/spring-framework/">Spring Framework</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/java/">Java</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/spring/">Spring</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/lap-trinh-mang/">Lap Trinh Mang</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/bao-mat/">Bao Mat</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Bảo mật là ưu tiên hàng đầu trong phát triển ứng dụng web, và <strong>Spring Security</strong> chính là giải pháp tiêu chuẩn, mạnh mẽ và linh hoạt nhất cho các ứng dụng Java được xây dựng trên Spring Framework. Bài viết này sẽ giúp bạn nắm vững kiến trúc, các khái niệm cơ bản (Xác thực và Phân quyền) và các bước thực hành để xây dựng một ứng dụng an toàn.</p>
+<h2 id="i-spring-security-là-gì-và-tầm-quan-trọng">
+  I. Spring Security Là Gì và Tầm Quan Trọng
+  <a class="heading-link" href="#i-spring-security-l%c3%a0-g%c3%ac-v%c3%a0-t%e1%ba%a7m-quan-tr%e1%bb%8dng">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="1-định-nghĩa-và-phạm-vi">
+  1. Định Nghĩa và Phạm Vi
+  <a class="heading-link" href="#1-%c4%91%e1%bb%8bnh-ngh%c4%a9a-v%c3%a0-ph%e1%ba%a1m-vi">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Spring Security là một framework độc lập và có khả năng mở rộng được thiết kế để xử lý hai nhiệm vụ chính trong việc bảo vệ ứng dụng:</p>
+<ul>
+<li><strong>Xác thực (Authentication):</strong> Trả lời câu hỏi <strong>&ldquo;Bạn là ai?&rdquo;</strong> – Xác minh danh tính của người dùng hoặc hệ thống.</li>
+<li><strong>Phân quyền (Authorization):</strong> Trả lời câu hỏi <strong>&ldquo;Bạn được phép làm gì?&rdquo;</strong> – Quyết định quyền truy cập vào tài nguyên sau khi đã xác thực.</li>
+</ul>
+<h3 id="2-ưu-điểm-nổi-bật">
+  2. Ưu Điểm Nổi Bật
+  <a class="heading-link" href="#2-%c6%b0u-%c4%91i%e1%bb%83m-n%e1%bb%95i-b%e1%ba%adt">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Ưu Điểm</th>
+          <th style="text-align: left">Mô Tả</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Tích hợp sâu</strong></td>
+          <td style="text-align: left">Hoạt động hoàn hảo trong toàn bộ hệ sinh thái Spring (Spring Boot, Spring MVC, WebFlux).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Tính toàn diện</strong></td>
+          <td style="text-align: left">Hỗ trợ hầu hết các chuẩn bảo mật hiện đại (OAuth2, JWT, CSRF, Session Fixation).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Khả năng tùy biến</strong></td>
+          <td style="text-align: left">Gần như mọi thành phần trong chuỗi Filter đều có thể được tùy chỉnh, thay thế hoặc mở rộng.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="3-so-sánh-ngắn-spring-security-và-các-công-cụ-khác">
+  3. So Sánh Ngắn: Spring Security và Các Công Cụ Khác
+  <a class="heading-link" href="#3-so-s%c3%a1nh-ng%e1%ba%afn-spring-security-v%c3%a0-c%c3%a1c-c%c3%b4ng-c%e1%bb%a5-kh%c3%a1c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong>So với Apache Shiro:</strong> Spring Security mạnh mẽ hơn, cung cấp nhiều tính năng bảo mật cấp độ doanh nghiệp hơn và tích hợp tốt hơn với Spring.</li>
+<li><strong>So với Keycloak/Okta (Identity Providers):</strong> Spring Security đóng vai trò là <strong>Máy khách (Client)</strong> hoặc <strong>Resource Server</strong> bảo vệ ứng dụng và sử dụng dịch vụ của IdP thông qua OAuth2/OIDC.</li>
+</ul>
+<hr>
+<h2 id="ii-các-khái-niệm-nền-tảng-trong-kiến-trúc-spring-security">
+  II. Các Khái Niệm Nền Tảng trong Kiến Trúc Spring Security
+  <a class="heading-link" href="#ii-c%c3%a1c-kh%c3%a1i-ni%e1%bb%87m-n%e1%bb%81n-t%e1%ba%a3ng-trong-ki%e1%ba%bfn-tr%c3%bac-spring-security">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Kiến trúc bảo mật của Spring Security được xây dựng dựa trên một số thành phần cốt lõi sau:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Khái Niệm</th>
+          <th style="text-align: left">Vai Trò</th>
+          <th style="text-align: left">Liên Quan Đến</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>Authentication</strong></td>
+          <td style="text-align: left">Quá trình kiểm tra thông tin đăng nhập (Credentials).</td>
+          <td style="text-align: left"><code>AuthenticationManager</code> (thực hiện kiểm tra).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Authorization</strong></td>
+          <td style="text-align: left">Quá trình kiểm tra quyền hạn sau khi xác thực thành công.</td>
+          <td style="text-align: left"><code>AccessDecisionManager</code> (thực hiện kiểm tra).</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Principal</strong></td>
+          <td style="text-align: left">Đại diện cho danh tính của người dùng đã được xác thực (thường là username hoặc <code>UserDetails</code>).</td>
+          <td style="text-align: left"><code>Authentication Object</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>SecurityContextHolder</strong></td>
+          <td style="text-align: left">Cơ chế lưu trữ <code>SecurityContext</code> (chứa đối tượng <code>Authentication</code>) cho luồng xử lý request hiện tại.</td>
+          <td style="text-align: left">Kiến trúc lõi của Spring Security.</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="iii-hướng-dẫn-triển-khai-spring-security-cơ-bản-spring-boot">
+  III. Hướng Dẫn Triển Khai Spring Security Cơ Bản (Spring Boot)
+  <a class="heading-link" href="#iii-h%c6%b0%e1%bb%9bng-d%e1%ba%abn-tri%e1%bb%83n-khai-spring-security-c%c6%a1-b%e1%ba%a3n-spring-boot">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="bước-1-khởi-tạo-và-dependency">
+  Bước 1: Khởi tạo và Dependency
+  <a class="heading-link" href="#b%c6%b0%e1%bb%9bc-1-kh%e1%bb%9fi-t%e1%ba%a1o-v%c3%a0-dependency">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Thêm dependency <code>spring-boot-starter-security</code> vào dự án của bạn (sử dụng Spring Initializr).</p>
+<h3 id="bước-2-cấu-hình-securityfilterchain">
+  Bước 2: Cấu hình SecurityFilterChain
+  <a class="heading-link" href="#b%c6%b0%e1%bb%9bc-2-c%e1%ba%a5u-h%c3%acnh-securityfilterchain">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Bạn nên định nghĩa một <code>@Bean SecurityFilterChain</code> để tùy chỉnh quy tắc bảo mật:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Configuration</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@EnableWebSecurity</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SecurityConfig</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Bean</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">SecurityFilterChain</span><span class="w"> </span><span class="nf">filterChain</span><span class="p">(</span><span class="n">HttpSecurity</span><span class="w"> </span><span class="n">http</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">http</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="na">authorizeHttpRequests</span><span class="p">(</span><span class="n">auth</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">auth</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="c1">// 1. Phân quyền dựa trên URL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">requestMatchers</span><span class="p">(</span><span class="s">&#34;/&#34;</span><span class="p">,</span><span class="w"> </span><span class="s">&#34;/public&#34;</span><span class="p">).</span><span class="na">permitAll</span><span class="p">()</span><span class="w">         </span><span class="c1">// Công khai</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">requestMatchers</span><span class="p">(</span><span class="s">&#34;/admin/**&#34;</span><span class="p">).</span><span class="na">hasRole</span><span class="p">(</span><span class="s">&#34;ADMIN&#34;</span><span class="p">)</span><span class="w">       </span><span class="c1">// Yêu cầu vai trò ADMIN</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">anyRequest</span><span class="p">().</span><span class="na">authenticated</span><span class="p">()</span><span class="w">                       </span><span class="c1">// Mọi request khác đều cần đăng nhập</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="na">formLogin</span><span class="p">(</span><span class="n">login</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">login</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">loginPage</span><span class="p">(</span><span class="s">&#34;/login&#34;</span><span class="p">)</span><span class="w">                                </span><span class="c1">// Chỉ định trang đăng nhập</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">permitAll</span><span class="p">()</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">.</span><span class="na">logout</span><span class="p">(</span><span class="n">logout</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">logout</span><span class="p">.</span><span class="na">permitAll</span><span class="p">());</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">http</span><span class="p">.</span><span class="na">build</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h3 id="bước-3-quản-lý-danh-tính-người-dùng-user-management">
+  Bước 3: Quản lý Danh tính Người dùng (User Management)
+  <a class="heading-link" href="#b%c6%b0%e1%bb%9bc-3-qu%e1%ba%a3n-l%c3%bd-danh-t%c3%adnh-ng%c6%b0%e1%bb%9di-d%c3%b9ng-user-management">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="1-triển-khai-userdetailsservice-kết-nối-db">
+  1. Triển khai UserDetailsService (Kết nối DB)
+  <a class="heading-link" href="#1-tri%e1%bb%83n-khai-userdetailsservice-k%e1%ba%bft-n%e1%bb%91i-db">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Bạn cần tạo một Service triển khai <code>UserDetailsService</code> để hướng dẫn Spring Security cách truy vấn thông tin người dùng từ DB.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@Service</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">JpaUserDetailsService</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">UserDetailsService</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// ... (inject UserRepository)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">UserDetails</span><span class="w"> </span><span class="nf">loadUserByUsername</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">UsernameNotFoundException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">// Tìm kiếm User Entity trong DB</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">userRepository</span><span class="p">.</span><span class="na">findByUsername</span><span class="p">(</span><span class="n">username</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">map</span><span class="p">(</span><span class="n">SecurityUser</span><span class="p">::</span><span class="k">new</span><span class="p">)</span><span class="w"> </span><span class="c1">// Chuyển User Entity thành UserDetails object</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="p">.</span><span class="na">orElseThrow</span><span class="p">(()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">UsernameNotFoundException</span><span class="p">(</span><span class="s">&#34;User not found: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">username</span><span class="p">));</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<h4 id="2-cấu-hình-passwordencoder-bắt-buộc">
+  2. Cấu hình PasswordEncoder (Bắt buộc)
+  <a class="heading-link" href="#2-c%e1%ba%a5u-h%c3%acnh-passwordencoder-b%e1%ba%aft-bu%e1%bb%99c">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Mật khẩu phải luôn được băm (hash). <strong>BCrypt</strong> là tiêu chuẩn được khuyến khích:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="c1">// Trong SecurityConfig</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nd">@Bean</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="n">PasswordEncoder</span><span class="w"> </span><span class="nf">passwordEncoder</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">// BCrypt là thuật toán hashing một chiều mạnh mẽ</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BCryptPasswordEncoder</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div>
+<hr>
+<h2 id="iv-các-chủ-đề-nâng-cao-trong-spring-security">
+  IV. Các Chủ Đề Nâng Cao trong Spring Security
+  <a class="heading-link" href="#iv-c%c3%a1c-ch%e1%bb%a7-%c4%91%e1%bb%81-n%c3%a2ng-cao-trong-spring-security">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="1-bảo-mật-api-phi-trạng-thái-stateless-với-jwt">
+  1. Bảo Mật API Phi Trạng Thái (Stateless) với JWT
+  <a class="heading-link" href="#1-b%e1%ba%a3o-m%e1%ba%adt-api-phi-tr%e1%ba%a1ng-th%c3%a1i-stateless-v%e1%bb%9bi-jwt">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>JWT là tiêu chuẩn cho Microservices. Server cấp một <strong>JSON Web Token</strong> đã ký số. Client gửi token này trong mỗi request (qua Authorization Header). Server xác thực token mà không cần tra cứu trạng thái session.</p>
+<h3 id="2-bảo-mật-cấp-phương-thức-preauthorize">
+  2. Bảo Mật Cấp Phương Thức (@PreAuthorize)
+  <a class="heading-link" href="#2-b%e1%ba%a3o-m%e1%ba%adt-c%e1%ba%a5p-ph%c6%b0%c6%a1ng-th%e1%bb%a9c-preauthorize">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Áp dụng quy tắc phân quyền chi tiết trực tiếp trên các phương thức trong tầng Service.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Annotation</th>
+          <th style="text-align: left">Mục Đích</th>
+          <th style="text-align: left">Ví Dụ</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong><code>@EnableMethodSecurity</code></strong></td>
+          <td style="text-align: left">Bật tính năng bảo mật cấp phương thức.</td>
+          <td style="text-align: left">Được đặt trên lớp <code>SecurityConfig</code>.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong><code>@PreAuthorize</code></strong></td>
+          <td style="text-align: left">Kiểm tra điều kiện trước khi thực thi phương thức.</td>
+          <td style="text-align: left"><code>@PreAuthorize(&quot;hasAuthority('USER_DELETE')&quot;)</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="3-tích-hợp-oauth-20-và-openid-connect-oidc">
+  3. Tích hợp OAuth 2.0 và OpenID Connect (OIDC)
+  <a class="heading-link" href="#3-t%c3%adch-h%e1%bb%a3p-oauth-20-v%c3%a0-openid-connect-oidc">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Cho phép Đăng nhập với bên thứ ba (ví dụ: Google, Facebook). Spring Security hỗ trợ cấu hình ứng dụng làm <strong>OAuth Client</strong>.</p>
+<hr>
+<h2 id="v-các-câu-hỏi-thường-gặp">
+  V. Các Câu Hỏi Thường Gặp
+  <a class="heading-link" href="#v-c%c3%a1c-c%c3%a2u-h%e1%bb%8fi-th%c6%b0%e1%bb%9dng-g%e1%ba%b7p">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="1-phân-biệt-hasrole-và-hasauthority">
+  1. Phân biệt <code>hasRole()</code> và <code>hasAuthority()</code>
+  <a class="heading-link" href="#1-ph%c3%a2n-bi%e1%bb%87t-hasrole-v%c3%a0-hasauthority">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong><code>hasRole(&quot;ADMIN&quot;)</code></strong>: Spring Security sẽ tự động chuyển thành <code>hasAuthority(&quot;ROLE_ADMIN&quot;)</code>.</li>
+<li><strong><code>hasAuthority(&quot;ROLE_ADMIN&quot;)</code></strong>: Yêu cầu tên quyền chính xác, bao gồm tiền tố <code>ROLE_</code>. Thường dùng cho các quyền chi tiết hơn (Ví dụ: <code>hasAuthority(&quot;PRODUCT_WRITE&quot;)</code>).</li>
+</ul>
+<h3 id="2-vấn-đề-securitycontext-bị-mất-trong-async">
+  2. Vấn đề <code>SecurityContext</code> bị mất trong <code>@Async</code>
+  <a class="heading-link" href="#2-v%e1%ba%a5n-%c4%91%e1%bb%81-securitycontext-b%e1%bb%8b-m%e1%ba%a5t-trong-async">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Khi gọi <code>@Async</code>, một luồng mới được tạo ra và không kế thừa thông tin bảo mật. <strong>Giải pháp:</strong> Chuyển chiến lược lưu trữ sang <code>SecurityContextHolder.setStrategyName(SecurityContextHolder.MODE_INHERITABLE)</code>.</p>
+<hr>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Phạm Đông Hưng 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>

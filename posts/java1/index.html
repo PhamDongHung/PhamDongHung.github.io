@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <title>
+  Các câu lệnh trong Java: Chi tiết từ cơ bản đến nâng cao · Blog của Hưng
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Phạm Đông Hưng">
+<meta name="description" content="Việc làm chủ các câu lệnh (statements) là bước đi nền tảng và không thể thiếu đối với bất kỳ lập trình viên Java nào. Các câu lệnh này là các khối xây dựng cơ bản, quyết định cách chương trình hoạt động, từ việc quản lý dữ liệu đến điều khiển luồng thực thi. Bài viết này sẽ đi sâu vào các nhóm câu lệnh chính: cơ bản, điều khiển luồng, xử lý ngoại lệ, và đặc biệt, giúp bạn tối ưu hóa logic chương trình.">
+<meta name="keywords" content="lap trinh mang, java, javascript, blog">
+
+
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Các câu lệnh trong Java: Chi tiết từ cơ bản đến nâng cao">
+  <meta name="twitter:description" content="Việc làm chủ các câu lệnh (statements) là bước đi nền tảng và không thể thiếu đối với bất kỳ lập trình viên Java nào. Các câu lệnh này là các khối xây dựng cơ bản, quyết định cách chương trình hoạt động, từ việc quản lý dữ liệu đến điều khiển luồng thực thi. Bài viết này sẽ đi sâu vào các nhóm câu lệnh chính: cơ bản, điều khiển luồng, xử lý ngoại lệ, và đặc biệt, giúp bạn tối ưu hóa logic chương trình.">
+
+<meta property="og:url" content="http://localhost:1313/posts/java1/">
+  <meta property="og:site_name" content="Blog của Hưng">
+  <meta property="og:title" content="Các câu lệnh trong Java: Chi tiết từ cơ bản đến nâng cao">
+  <meta property="og:description" content="Việc làm chủ các câu lệnh (statements) là bước đi nền tảng và không thể thiếu đối với bất kỳ lập trình viên Java nào. Các câu lệnh này là các khối xây dựng cơ bản, quyết định cách chương trình hoạt động, từ việc quản lý dữ liệu đến điều khiển luồng thực thi. Bài viết này sẽ đi sâu vào các nhóm câu lệnh chính: cơ bản, điều khiển luồng, xử lý ngoại lệ, và đặc biệt, giúp bạn tối ưu hóa logic chương trình.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:tag" content="Chuyên Môn IT">
+    <meta property="article:tag" content="Tài Liệu Java">
+    <meta property="article:tag" content="Java">
+
+
+
+
+<link rel="canonical" href="http://localhost:1313/posts/java1/">
+
+
+<link rel="preload" href="/fonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-regular-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.css" media="screen">
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.css" media="screen">
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa-solid fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    
+    <a class="navigation-title" href="http://localhost:1313/">
+      Blog của Hưng
+    </a>
+    
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa-solid fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link " href="/about/">About</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="http://localhost:1313/posts/java1/">
+              Các câu lệnh trong Java: Chi tiết từ cơ bản đến nâng cao
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa-solid fa-calendar" aria-hidden="true"></i>
+              <time datetime="2025-10-23T00:00:00Z">
+                23/10/2025
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa-solid fa-clock" aria-hidden="true"></i>
+              5-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa-solid fa-user" aria-hidden="true"></i>
+    <a href="/authors/ph%E1%BA%A1m-%C4%91%C3%B4ng-h%C6%B0ng/">Phạm Đông Hưng</a></div>
+
+          <div class="categories">
+  <i class="fa-solid fa-folder" aria-hidden="true"></i>
+    <a href="/categories/c%C3%BA-ph%C3%A1p/">Cú Pháp</a>
+      <span class="separator">•</span>
+    <a href="/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/">Trình Diễn Chủ Đề</a></div>
+
+          <div class="tags">
+  <i class="fa-solid fa-tag" aria-hidden="true"></i>
+    <span class="tag">
+      <a href="/tags/chuy%C3%AAn-m%C3%B4n-it/">Chuyên Môn IT</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/t%C3%A0i-li%E1%BB%87u-java/">Tài Liệu Java</a>
+    </span>
+      <span class="separator">•</span>
+    <span class="tag">
+      <a href="/tags/java/">Java</a>
+    </span></div>
+
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <p>Việc làm chủ các câu lệnh (statements) là bước đi nền tảng và không thể thiếu đối với bất kỳ lập trình viên Java nào. Các câu lệnh này là các khối xây dựng cơ bản, quyết định cách chương trình hoạt động, từ việc quản lý dữ liệu đến điều khiển luồng thực thi. Bài viết này sẽ đi sâu vào các nhóm câu lệnh chính: cơ bản, điều khiển luồng, xử lý ngoại lệ, và đặc biệt, giúp bạn tối ưu hóa logic chương trình.</p>
+<h2 id="i-phân-loại-câu-lệnh-java-cơ-bản">
+  I. Phân Loại Câu Lệnh Java Cơ Bản
+  <a class="heading-link" href="#i-ph%c3%a2n-lo%e1%ba%a1i-c%c3%a2u-l%e1%bb%87nh-java-c%c6%a1-b%e1%ba%a3n">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Các câu lệnh cơ bản trong Java tập trung vào việc định nghĩa, lưu trữ và tương tác với dữ liệu.</p>
+<h3 id="1-câu-lệnh-khai-báo-biến-declaration-statement">
+  1. Câu Lệnh Khai Báo Biến (Declaration Statement)
+  <a class="heading-link" href="#1-c%c3%a2u-l%e1%bb%87nh-khai-b%c3%a1o-bi%e1%ba%bfn-declaration-statement">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Câu lệnh này dùng để định nghĩa một vùng nhớ (biến) trong bộ nhớ máy tính để lưu trữ dữ liệu.</p>
+<ul>
+<li><strong>Cú pháp:</strong> <code>&lt;Kiểu_Dữ_Liệu&gt; &lt;Tên_Biến&gt;;</code></li>
+<li><strong>Ví dụ:</strong>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kt">int</span><span class="w"> </span><span class="n">soNguyen</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kt">double</span><span class="w"> </span><span class="n">giaTriThuc</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">String</span><span class="w"> </span><span class="n">tenNguoiDung</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li><strong>Giải thích:</strong> <code>int</code>, <code>double</code>, <code>String</code> xác định loại dữ liệu mà biến đó sẽ lưu trữ.</li>
+</ul>
+<h3 id="2-câu-lệnh-gán-giá-trị-assignment-statement">
+  2. Câu Lệnh Gán Giá Trị (Assignment Statement)
+  <a class="heading-link" href="#2-c%c3%a2u-l%e1%bb%87nh-g%c3%a1n-gi%c3%a1-tr%e1%bb%8b-assignment-statement">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Dùng để cấp một giá trị cụ thể cho biến đã được khai báo.</p>
+<ul>
+<li><strong>Cú pháp:</strong> <code>&lt;Tên_Biến&gt; = &lt;Giá_Trị&gt;;</code></li>
+<li><strong>Ví dụ:</strong>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">soNguyen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">42</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">giaTriThuc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">19</span><span class="p">.</span><span class="na">99</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">tenNguoiDung</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;Le Van B&#34;</span><span class="p">;</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li><strong>Lưu ý:</strong> Giá trị gán phải tương thích với kiểu dữ liệu của biến.</li>
+</ul>
+<h3 id="3-câu-lệnh-in-ra-màn-hình-output-statement">
+  3. Câu Lệnh In ra Màn hình (Output Statement)
+  <a class="heading-link" href="#3-c%c3%a2u-l%e1%bb%87nh-in-ra-m%c3%a0n-h%c3%acnh-output-statement">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Sử dụng để hiển thị thông tin, kết quả tính toán hoặc thông báo ra console.</p>
+<ul>
+<li><strong>Cú pháp phổ biến:</strong> <code>System.out.println(&lt;Nội_Dung&gt;);</code> (In và tự động xuống dòng)</li>
+<li><strong>Ví dụ:</strong>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Xin chao!&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="s">&#34;Ket qua: &#34;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="p">(</span><span class="n">5</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">3</span><span class="p">));</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="4-câu-lệnh-nhập-liệu-từ-bàn-phím-input-statement">
+  4. Câu Lệnh Nhập Liệu từ Bàn Phím (Input Statement)
+  <a class="heading-link" href="#4-c%c3%a2u-l%e1%bb%87nh-nh%e1%ba%adp-li%e1%bb%87u-t%e1%bb%ab-b%c3%a0n-ph%c3%adm-input-statement">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Cho phép chương trình tương tác và thu thập dữ liệu do người dùng nhập vào thông qua lớp <code>Scanner</code>.</p>
+<ul>
+<li><strong>Các bước chính:</strong>
+<ul>
+<li><strong>Import:</strong> <code>import java.util.Scanner;</code></li>
+<li><strong>Khởi tạo đối tượng:</strong> <code>Scanner sc = new Scanner(System.in);</code></li>
+<li><strong>Đọc dữ liệu:</strong> <code>int tuoi = sc.nextInt();</code></li>
+</ul>
+</li>
+<li><strong>Quan trọng:</strong> Nên gọi <code>sc.close()</code> khi kết thúc để tránh rò rỉ tài nguyên.</li>
+</ul>
+<hr>
+<h2 id="ii-các-câu-lệnh-điều-khiển-luồng-flow-control">
+  II. Các Câu Lệnh Điều Khiển Luồng (Flow Control)
+  <a class="heading-link" href="#ii-c%c3%a1c-c%c3%a2u-l%e1%bb%87nh-%c4%91i%e1%bb%81u-khi%e1%bb%83n-lu%e1%bb%93ng-flow-control">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Nhóm câu lệnh này xác định thứ tự và điều kiện thực thi các đoạn mã, là cốt lõi của logic chương trình.</p>
+<h3 id="1-câu-lệnh-điều-kiện-conditional-statements">
+  1. Câu Lệnh Điều Kiện (Conditional Statements)
+  <a class="heading-link" href="#1-c%c3%a2u-l%e1%bb%87nh-%c4%91i%e1%bb%81u-ki%e1%bb%87n-conditional-statements">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Loại Lệnh</th>
+          <th style="text-align: left">Mục Đích</th>
+          <th style="text-align: left">Cú Pháp</th>
+          <th style="text-align: left">Ví dụ</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>if</strong></td>
+          <td style="text-align: left">Thực thi khối mã nếu điều kiện Đúng (<code>true</code>).</td>
+          <td style="text-align: left"><code>if (điều_kiện) { ... }</code></td>
+          <td style="text-align: left"><code>if (diem &gt;= 50)</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>if-else</strong></td>
+          <td style="text-align: left">Thực thi khối mã nếu điều kiện Đúng hoặc khối mã khác nếu Sai (<code>false</code>).</td>
+          <td style="text-align: left"><code>if (cđ) { ... } else { ... }</code></td>
+          <td style="text-align: left"><code>if (gio &lt; 12) { chaoSang(); } else { chaoToi(); }</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>switch-case</strong></td>
+          <td style="text-align: left">Kiểm tra một biến với nhiều trường hợp cố định.</td>
+          <td style="text-align: left"><code>switch (biến) { case g1: ... break; default: ... }</code></td>
+          <td style="text-align: left">Thường dùng để kiểm tra các giá trị như <code>int</code>, <code>String</code>, <code>enum</code>.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="2-câu-lệnh-vòng-lặp-looping-statements">
+  2. Câu Lệnh Vòng Lặp (Looping Statements)
+  <a class="heading-link" href="#2-c%c3%a2u-l%e1%bb%87nh-v%c3%b2ng-l%e1%ba%b7p-looping-statements">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Loại Vòng Lặp</th>
+          <th style="text-align: left">Khi nào dùng?</th>
+          <th style="text-align: left">Cú Pháp</th>
+          <th style="text-align: left">Đặc Điểm</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>for</strong></td>
+          <td style="text-align: left">Khi biết trước số lần lặp.</td>
+          <td style="text-align: left"><code>for (khởi_tạo; điều_kiện; bước_nhảy) { ... }</code></td>
+          <td style="text-align: left">Phù hợp cho việc duyệt mảng, lặp cố định.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>while</strong></td>
+          <td style="text-align: left">Khi chưa biết trước số lần lặp, cần điều kiện dừng.</td>
+          <td style="text-align: left"><code>while (điều_kiện) { ... }</code></td>
+          <td style="text-align: left">Lặp lại 0 lần trở lên.</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>do-while</strong></td>
+          <td style="text-align: left">Khi muốn khối mã được thực thi ít nhất một lần.</td>
+          <td style="text-align: left"><code>do { ... } while (điều_kiện);</code></td>
+          <td style="text-align: left">Điều kiện được kiểm tra sau lần lặp đầu tiên.</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="3-câu-lệnh-rẽ-nhánh-trong-vòng-lặp">
+  3. Câu Lệnh Rẽ Nhánh Trong Vòng Lặp
+  <a class="heading-link" href="#3-c%c3%a2u-l%e1%bb%87nh-r%e1%ba%bd-nh%c3%a1nh-trong-v%c3%b2ng-l%e1%ba%b7p">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li><strong><code>break</code></strong>: Dừng và thoát ngay lập tức khỏi vòng lặp hoặc khối <code>switch</code> gần nhất.</li>
+<li><strong><code>continue</code></strong>: Bỏ qua phần còn lại của lần lặp hiện tại và chuyển sang lần lặp tiếp theo.</li>
+</ul>
+<hr>
+<h2 id="iii-câu-lệnh-xử-lý-ngoại-lệ-exception-handling-">
+  III. Câu Lệnh Xử Lý Ngoại Lệ (Exception Handling) 🛡️
+  <a class="heading-link" href="#iii-c%c3%a2u-l%e1%bb%87nh-x%e1%bb%ad-l%c3%bd-ngo%e1%ba%a1i-l%e1%bb%87-exception-handling-">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Giúp chương trình chạy ổn định bằng cách kiểm soát các lỗi (ngoại lệ) phát sinh trong quá trình thực thi.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Khối Lệnh/Từ Khóa</th>
+          <th style="text-align: left">Mục Đích</th>
+          <th style="text-align: left">Cú Pháp</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>try-catch</strong></td>
+          <td style="text-align: left">Bắt và xử lý các ngoại lệ để chương trình không bị dừng đột ngột.</td>
+          <td style="text-align: left"><code>try { ... } catch (LoaiNgoaiLe e) { ... }</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>finally</strong></td>
+          <td style="text-align: left">Chứa khối mã luôn luôn thực thi sau khi try và catch kết thúc (thường dùng để đóng tài nguyên).</td>
+          <td style="text-align: left"><code>try { ... } finally { ... }</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>throw</strong></td>
+          <td style="text-align: left">Được dùng để ném một đối tượng ngoại lệ cụ thể theo logic lập trình.</td>
+          <td style="text-align: left"><code>throw new LoaiNgoaiLe(&quot;Thông báo lỗi&quot;);</code></td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Ví dụ (<code>try-catch-finally</code>):</strong>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="k">try</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">ketQua</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">10</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">0</span><span class="p">;</span><span class="w"> </span><span class="c1">// Gây ra lỗi ArithmeticException</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">ArithmeticException</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Loi: Khong the chia cho 0.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&#34;Khoi nay luon chay.&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<hr>
+<h2 id="iv-các-câu-lệnh-đặc-biệt">
+  IV. Các Câu Lệnh Đặc Biệt
+  <a class="heading-link" href="#iv-c%c3%a1c-c%c3%a2u-l%e1%bb%87nh-%c4%91%e1%ba%b7c-bi%e1%bb%87t">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Java còn có các câu lệnh đặc thù, phục vụ các mục đích nâng cao hơn:</p>
+<h3 id="1-câu-lệnh-return-trả-giá-trị-về">
+  1. Câu Lệnh <code>return</code> (Trả Giá Trị Về)
+  <a class="heading-link" href="#1-c%c3%a2u-l%e1%bb%87nh-return-tr%e1%ba%a3-gi%c3%a1-tr%e1%bb%8b-v%e1%bb%81">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Dùng để kết thúc việc thực thi một phương thức và, nếu phương thức đó có kiểu trả về, nó sẽ trả lại giá trị cho nơi gọi.</p>
+<ul>
+<li><strong>Ví dụ:</strong>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">tinhTong</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="p">;</span><span class="w"> </span><span class="c1">// Trả về tổng</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">hienThi</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="c1">//... code ...</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">return</span><span class="p">;</span><span class="w"> </span><span class="c1">// Kết thúc phương thức (tùy chọn trong void method)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="2-câu-lệnh-assert-kiểm-tra-giả-định">
+  2. Câu Lệnh <code>assert</code> (Kiểm Tra Giả Định)
+  <a class="heading-link" href="#2-c%c3%a2u-l%e1%bb%87nh-assert-ki%e1%bb%83m-tra-gi%e1%ba%a3-%c4%91%e1%bb%8bnh">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Dùng để kiểm tra một giả định phải đúng tại một thời điểm nào đó trong code. Nếu điều kiện sai, nó ném ra <code>AssertionError</code>. Chủ yếu dùng cho quá trình phát triển và debug.</p>
+<ul>
+<li><strong>Cú pháp:</strong> <code>assert biểu_thức_logic : &quot;Thông báo lỗi&quot;;</code></li>
+</ul>
+<h3 id="3-câu-lệnh-synchronized-đồng-bộ-hóa">
+  3. Câu Lệnh <code>synchronized</code> (Đồng Bộ Hóa)
+  <a class="heading-link" href="#3-c%c3%a2u-l%e1%bb%87nh-synchronized-%c4%91%e1%bb%93ng-b%e1%bb%99-h%c3%b3a">
+    <i class="fa-solid fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Cực kỳ quan trọng trong lập trình <strong>đa luồng (multithreading)</strong>. Nó đảm bảo rằng chỉ một luồng được phép truy cập vào đoạn mã hoặc phương thức được đánh dấu tại một thời điểm, tránh xung đột dữ liệu.</p>
+<ul>
+<li><strong>Cú pháp:</strong> <code>public synchronized void tangGiaTri() { ... }</code> hoặc <code>synchronized (doi_tuong_lock) { ... }</code></li>
+</ul>
+<p>Việc nắm vững các loại câu lệnh này là <strong>chìa khóa</strong> để xây dựng các ứng dụng Java hiệu quả, ổn định và dễ bảo trì.</p>
+<hr>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2025
+     Phạm Đông Hưng 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.js"></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+</html>
