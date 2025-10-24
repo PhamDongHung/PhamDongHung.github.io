@@ -2,111 +2,108 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/</loc>
-    <lastmod>2025-10-25T01:42:44+07:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/posts/java6/</loc>
+    <loc>http://www.example.com/posts/java6/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java3/</loc>
+    <loc>http://www.example.com/posts/java3/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/authors/</loc>
+    <loc>http://www.example.com/authors/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/bao-mat/</loc>
+    <loc>http://www.example.com/tags/bao-mat/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/bao-mat-ung-dung/</loc>
+    <loc>http://www.example.com/categories/bao-mat-ung-dung/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java1/</loc>
+    <loc>http://www.example.com/posts/java1/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>http://www.example.com/categories/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/chuy%C3%AAn-m%C3%B4n-it/</loc>
+    <loc>http://www.example.com/tags/chuy%C3%AAn-m%C3%B4n-it/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/c%C3%BA-ph%C3%A1p/</loc>
+    <loc>http://www.example.com/categories/c%C3%BA-ph%C3%A1p/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/fullstack/</loc>
+    <loc>http://www.example.com/tags/fullstack/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java7/</loc>
+    <loc>http://www.example.com/posts/java7/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/golang/</loc>
+    <loc>http://www.example.com/tags/golang/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/html/</loc>
+    <loc>http://www.example.com/tags/html/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/java/</loc>
+    <loc>http://www.example.com/tags/java/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java5/</loc>
+    <loc>http://www.example.com/posts/java5/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/javascript/</loc>
+    <loc>http://www.example.com/tags/javascript/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/kien-truc-phan-mem/</loc>
+    <loc>http://www.example.com/categories/kien-truc-phan-mem/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lap-trinh-mang/</loc>
+    <loc>http://www.example.com/tags/lap-trinh-mang/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/lap-trinh-web/</loc>
+    <loc>http://www.example.com/categories/lap-trinh-web/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/lap-trinh-web/</loc>
+    <loc>http://www.example.com/tags/lap-trinh-web/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/authors/ph%E1%BA%A1m-%C4%91%C3%B4ng-h%C6%B0ng/</loc>
+    <loc>http://www.example.com/authors/ph%E1%BA%A1m-%C4%91%C3%B4ng-h%C6%B0ng/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java8/</loc>
+    <loc>http://www.example.com/posts/java8/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java9/</loc>
+    <loc>http://www.example.com/posts/java9/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>http://www.example.com/posts/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/so-sanh-ngon-ngu/</loc>
+    <loc>http://www.example.com/categories/so-sanh-ngon-ngu/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/spring/</loc>
+    <loc>http://www.example.com/tags/spring/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/spring-framework/</loc>
+    <loc>http://www.example.com/categories/spring-framework/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java2/</loc>
+    <loc>http://www.example.com/posts/java2/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/posts/java4/</loc>
+    <loc>http://www.example.com/posts/java4/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>http://www.example.com/tags/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/tags/t%C3%A0i-li%E1%BB%87u-java/</loc>
+    <loc>http://www.example.com/tags/t%C3%A0i-li%E1%BB%87u-java/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/thuc-hanh/</loc>
+    <loc>http://www.example.com/categories/thuc-hanh/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/</loc>
+    <loc>http://www.example.com/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/</loc>
     <lastmod>2025-10-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/about/</loc>
+    <loc>http://www.example.com/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/series/</loc>
+    <loc>http://www.example.com/series/</loc>
   </url>
 </urlset>

@@ -2,66 +2,66 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Blog của Hưng</title>
-    <link>http://localhost:1313/categories/</link>
+    <link>http://www.example.com/categories/</link>
     <description>Recent content in Categories on Blog của Hưng</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.example.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bao Mat Ung Dung</title>
-      <link>http://localhost:1313/categories/bao-mat-ung-dung/</link>
+      <link>http://www.example.com/categories/bao-mat-ung-dung/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/bao-mat-ung-dung/</guid>
+      <guid>http://www.example.com/categories/bao-mat-ung-dung/</guid>
       <description></description>
     </item>
     <item>
       <title>Cú Pháp</title>
-      <link>http://localhost:1313/categories/c%C3%BA-ph%C3%A1p/</link>
+      <link>http://www.example.com/categories/c%C3%BA-ph%C3%A1p/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/c%C3%BA-ph%C3%A1p/</guid>
+      <guid>http://www.example.com/categories/c%C3%BA-ph%C3%A1p/</guid>
       <description></description>
     </item>
     <item>
       <title>Kien Truc Phan Mem</title>
-      <link>http://localhost:1313/categories/kien-truc-phan-mem/</link>
+      <link>http://www.example.com/categories/kien-truc-phan-mem/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/kien-truc-phan-mem/</guid>
+      <guid>http://www.example.com/categories/kien-truc-phan-mem/</guid>
       <description></description>
     </item>
     <item>
       <title>Lap Trinh Web</title>
-      <link>http://localhost:1313/categories/lap-trinh-web/</link>
+      <link>http://www.example.com/categories/lap-trinh-web/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/lap-trinh-web/</guid>
+      <guid>http://www.example.com/categories/lap-trinh-web/</guid>
       <description></description>
     </item>
     <item>
       <title>So Sanh Ngon Ngu</title>
-      <link>http://localhost:1313/categories/so-sanh-ngon-ngu/</link>
+      <link>http://www.example.com/categories/so-sanh-ngon-ngu/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/so-sanh-ngon-ngu/</guid>
+      <guid>http://www.example.com/categories/so-sanh-ngon-ngu/</guid>
       <description></description>
     </item>
     <item>
       <title>Spring Framework</title>
-      <link>http://localhost:1313/categories/spring-framework/</link>
+      <link>http://www.example.com/categories/spring-framework/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/spring-framework/</guid>
+      <guid>http://www.example.com/categories/spring-framework/</guid>
       <description></description>
     </item>
     <item>
       <title>Thuc Hanh</title>
-      <link>http://localhost:1313/categories/thuc-hanh/</link>
+      <link>http://www.example.com/categories/thuc-hanh/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/thuc-hanh/</guid>
+      <guid>http://www.example.com/categories/thuc-hanh/</guid>
       <description></description>
     </item>
     <item>
       <title>Trình Diễn Chủ Đề</title>
-      <link>http://localhost:1313/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/</link>
+      <link>http://www.example.com/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/</guid>
+      <guid>http://www.example.com/categories/tr%C3%ACnh-di%E1%BB%85n-ch%E1%BB%A7-%C4%91%E1%BB%81/</guid>
       <description></description>
     </item>
   </channel>

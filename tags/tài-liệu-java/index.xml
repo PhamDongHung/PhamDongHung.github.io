@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tài Liệu Java on Blog của Hưng</title>
-    <link>http://localhost:1313/tags/t%C3%A0i-li%E1%BB%87u-java/</link>
+    <link>http://www.example.com/tags/t%C3%A0i-li%E1%BB%87u-java/</link>
     <description>Recent content in Tài Liệu Java on Blog của Hưng</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/t%C3%A0i-li%E1%BB%87u-java/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.example.com/tags/t%C3%A0i-li%E1%BB%87u-java/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>ArrayList trong java</title>
-      <link>http://localhost:1313/posts/java3/</link>
+      <link>http://www.example.com/posts/java3/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/java3/</guid>
+      <guid>http://www.example.com/posts/java3/</guid>
       <description>&lt;p&gt;ArrayList là một lớp thuộc &lt;strong&gt;Collections Framework&lt;/strong&gt; của Java, triển khai (&lt;strong&gt;implement&lt;/strong&gt;) &lt;strong&gt;List Interface&lt;/strong&gt; và kế thừa &lt;strong&gt;AbstractList&lt;/strong&gt;. Nó hoạt động như một &lt;strong&gt;mảng động (dynamic array)&lt;/strong&gt;, có khả năng thay đổi kích thước linh hoạt để lưu trữ các phần tử.&lt;/p&gt;&#xA;&lt;h2 id=&#34;i-đặc-điểm-cốt-lõi-của-arraylist&#34;&gt;&#xD;&#xA;  I. Đặc Điểm Cốt Lõi của ArrayList&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#i-%c4%91%e1%ba%b7c-%c4%91i%e1%bb%83m-c%e1%bb%91t-l%c3%b5i-c%e1%bb%a7a-arraylist&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Hiểu rõ những đặc điểm này sẽ giúp bạn quyết định khi nào nên sử dụng ArrayList thay vì các cấu trúc dữ liệu khác:&lt;/p&gt;</description>
     </item>
     <item>
       <title>Các câu lệnh trong Java: Chi tiết từ cơ bản đến nâng cao</title>
-      <link>http://localhost:1313/posts/java1/</link>
+      <link>http://www.example.com/posts/java1/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/java1/</guid>
+      <guid>http://www.example.com/posts/java1/</guid>
       <description>&lt;p&gt;Việc làm chủ các câu lệnh (statements) là bước đi nền tảng và không thể thiếu đối với bất kỳ lập trình viên Java nào. Các câu lệnh này là các khối xây dựng cơ bản, quyết định cách chương trình hoạt động, từ việc quản lý dữ liệu đến điều khiển luồng thực thi. Bài viết này sẽ đi sâu vào các nhóm câu lệnh chính: cơ bản, điều khiển luồng, xử lý ngoại lệ, và đặc biệt, giúp bạn tối ưu hóa logic chương trình.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Spring Java là gì: Hướng dẫn chi tiết cách bắt đầu với Spring</title>
-      <link>http://localhost:1313/posts/java2/</link>
+      <link>http://www.example.com/posts/java2/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/java2/</guid>
+      <guid>http://www.example.com/posts/java2/</guid>
       <description>&lt;h2 id=&#34;khám-phá-sức-mạnh-của-spring-framework-trụ-cột-phát-triển-ứng-dụng-java-hiện-đại-&#34;&gt;&#xD;&#xA;  Khám Phá Sức Mạnh của Spring Framework: Trụ Cột Phát Triển Ứng Dụng Java Hiện Đại 🚀&#xD;&#xA;  &lt;a class=&#34;heading-link&#34; href=&#34;#kh%c3%a1m-ph%c3%a1-s%e1%bb%a9c-m%e1%ba%a1nh-c%e1%bb%a7a-spring-framework-tr%e1%bb%a5-c%e1%bb%99t-ph%c3%a1t-tri%e1%bb%83n-%e1%bb%a9ng-d%e1%bb%a5ng-java-hi%e1%bb%87n-%c4%91%e1%ba%a1i-&#34;&gt;&#xD;&#xA;    &lt;i class=&#34;fa-solid fa-link&#34; aria-hidden=&#34;true&#34; title=&#34;Link to heading&#34;&gt;&lt;/i&gt;&#xD;&#xA;    &lt;span class=&#34;sr-only&#34;&gt;Link to heading&lt;/span&gt;&#xD;&#xA;  &lt;/a&gt;&#xD;&#xA;&lt;/h2&gt;&#xD;&#xA;&lt;p&gt;Spring Framework đã khẳng định vị thế là giải pháp nền tảng hàng đầu, giúp các nhà phát triển Java tối ưu hóa đáng kể quy trình xây dựng ứng dụng. Bằng cách cung cấp một cấu trúc vững chắc và một bộ công cụ phong phú, Spring không chỉ nâng cao năng suất mà còn cho phép xây dựng các hệ thống mạnh mẽ, linh hoạt và dễ bảo trì. Việc hiểu rõ những nguyên tắc cốt lõi và cách tiếp cận thực hành sẽ mở ra con đường phát triển ứng dụng Java hiệu quả và tinh gọn hơn.&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Bao Mat Ung Dung on Blog của Hưng</title>
-    <link>http://localhost:1313/categories/bao-mat-ung-dung/</link>
+    <link>http://www.example.com/categories/bao-mat-ung-dung/</link>
     <description>Recent content in Bao Mat Ung Dung on Blog của Hưng</description>
     <generator>Hugo</generator>
     <language>en</language>
     <lastBuildDate>Thu, 23 Oct 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/categories/bao-mat-ung-dung/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://www.example.com/categories/bao-mat-ung-dung/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Spring security: Khám phá framework bảo mật hàng đầu cho ứng dụng Java</title>
-      <link>http://localhost:1313/posts/java4/</link>
+      <link>http://www.example.com/posts/java4/</link>
       <pubDate>Thu, 23 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/java4/</guid>
+      <guid>http://www.example.com/posts/java4/</guid>
       <description>&lt;p&gt;Bảo mật là ưu tiên hàng đầu trong phát triển ứng dụng web, và &lt;strong&gt;Spring Security&lt;/strong&gt; chính là giải pháp tiêu chuẩn, mạnh mẽ và linh hoạt nhất cho các ứng dụng Java được xây dựng trên Spring Framework. Bài viết này sẽ giúp bạn nắm vững kiến trúc, các khái niệm cơ bản (Xác thực và Phân quyền) và các bước thực hành để xây dựng một ứng dụng an toàn.&lt;/p&gt;</description>
     </item>
   </channel>
